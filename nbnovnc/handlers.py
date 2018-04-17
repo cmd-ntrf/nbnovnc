@@ -41,8 +41,8 @@ class SupervisorHandler(SuperviseAndProxyHandler):
     def write_conf(self):
         config = configparser.ConfigParser()
         config['supervisord'] = {}
-        config['program:xtightvnc'] = {
-            'command': "Xtightvnc :{} -geometry {} -depth {}".format(
+        config['program:xvnc'] = {
+            'command': "Xvnc :{} -geometry {} -depth {}".format(
                 self.display, self.c.geometry, self.c.depth
             ),
             'priority': 10,
